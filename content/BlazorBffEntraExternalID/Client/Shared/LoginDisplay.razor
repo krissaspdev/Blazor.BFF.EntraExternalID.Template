@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inject NavigationManager Navigation
+
+<AuthorizeView>
+    <Authorized>
+        <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+            <MudText><b>Hello,</b> @GetDisplayName(context)</MudText>
+            <form method="post" action="api/Account/Logout">
+                <AntiForgeryTokenInput />
+                <MudIconButton Icon="@Icons.Material.Filled.PersonOff" Color="Color.Inherit"
+                               ButtonType="ButtonType.Submit" title="Sign out" />
+            </form>
+        </MudStack>
+    </Authorized>
+    <NotAuthorized>
+        <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" Href="api/Account/Login"
+                       title="Login" />
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private string GetDisplayName(AuthenticationState authState)
+    {
+        if (authState?.User == null)
+            return "Unknown";
+
+        // Try to get display name from Azure (the "name" claim)
+        var displayName = authState.User.FindFirst("name")?.Value;
+        if (!string.IsNullOrEmpty(displayName))
+            return displayName;
+
+        // Fallback to email if display name is not available
+        var email = authState.User.FindFirst("email")?.Value;
+        if (!string.IsNullOrEmpty(email))
+            return email;
+
+        // Final fallback to Identity.Name
+        return authState.User.Identity?.Name ?? "Unknown";
+    }
+}

@@ -1,0 +1,187 @@
+:root {
+    /* MudBlazor Default/Light Theme Colors */
+    --mud-palette-primary: #594ae2;
+    --mud-palette-error: #f44336;
+    --mud-palette-error-rgb: 244, 67, 54;
+    --mud-palette-background: #ffffff;
+    --mud-palette-surface: #ffffff;
+    --mud-palette-text-primary: rgba(0, 0, 0, 0.87);
+    --mud-palette-text-secondary: rgba(0, 0, 0, 0.60);
+    --mud-palette-text-disabled: rgba(0, 0, 0, 0.38);
+    --mud-palette-divider: rgba(0, 0, 0, 0.12);
+    
+    /* MudBlazor Typography */
+    --mud-typography-default-family: Roboto, Helvetica, Arial, sans-serif;
+    --mud-typography-h1-size: 6rem;
+    --mud-typography-h1-weight: 300;
+    --mud-typography-h1-line-height: 1.167;
+    --mud-typography-h2-size: 3.75rem;
+    --mud-typography-h2-weight: 300;
+    --mud-typography-h2-line-height: 1.2;
+    --mud-typography-h3-size: 3rem;
+    --mud-typography-h3-weight: 400;
+    --mud-typography-h3-line-height: 1.167;
+    --mud-typography-body1-size: 1rem;
+    --mud-typography-body1-weight: 400;
+    --mud-typography-body1-line-height: 1.5;
+    
+    /* Spacing (Material Design 8px grid) */
+    --mud-spacing-unit: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--mud-typography-default-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--mud-palette-background);
+    color: var(--mud-palette-text-primary);
+}
+
+/* Main container */
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: calc(var(--mud-spacing-unit) * 3);
+}
+
+.error-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* MudBlazor Alert simulation */
+.mud-alert {
+    position: relative;
+    padding: calc(var(--mud-spacing-unit) * 2);
+    margin-bottom: calc(var(--mud-spacing-unit) * 3);
+    border-radius: 4px;
+    background-color: rgba(var(--mud-palette-error-rgb), 0.12);
+    border-left: 4px solid var(--mud-palette-error);
+}
+
+.mud-alert-error {
+    color: var(--mud-palette-error);
+}
+
+/* MudBlazor Paper/Card simulation */
+.mud-paper {
+    background-color: var(--mud-palette-surface);
+    border-radius: 4px;
+    padding: calc(var(--mud-spacing-unit) * 3);
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+                0px 1px 1px 0px rgba(0,0,0,0.14),
+                0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+/* Typography - MudBlazor style */
+.mud-typography-h1 {
+    font-size: 2.5rem;
+    font-weight: var(--mud-typography-h1-weight);
+    line-height: var(--mud-typography-h1-line-height);
+    margin: 0 0 calc(var(--mud-spacing-unit) * 2) 0;
+    letter-spacing: -0.01562em;
+}
+
+.mud-typography-h2 {
+    font-size: 2rem;
+    font-weight: var(--mud-typography-h2-weight);
+    line-height: var(--mud-typography-h2-line-height);
+    margin: 0 0 calc(var(--mud-spacing-unit) * 2) 0;
+    letter-spacing: -0.00833em;
+}
+
+.mud-typography-h3 {
+    font-size: 1.5rem;
+    font-weight: var(--mud-typography-h3-weight);
+    line-height: var(--mud-typography-h3-line-height);
+    margin: calc(var(--mud-spacing-unit) * 3) 0 calc(var(--mud-spacing-unit) * 2) 0;
+    letter-spacing: 0em;
+}
+
+.mud-typography-body1 {
+    font-size: var(--mud-typography-body1-size);
+    font-weight: var(--mud-typography-body1-weight);
+    line-height: var(--mud-typography-body1-line-height);
+    margin: 0 0 calc(var(--mud-spacing-unit) * 2) 0;
+    letter-spacing: 0.00938em;
+}
+
+.mud-typography-body2 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.43;
+    margin: 0 0 calc(var(--mud-spacing-unit) * 2) 0;
+    letter-spacing: 0.01071em;
+}
+
+/* Text colors */
+.text-error {
+    color: var(--mud-palette-error);
+}
+
+.text-secondary {
+    color: var(--mud-palette-text-secondary);
+}
+
+/* Code block styling */
+.mud-code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(0, 0, 0, 0.04);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+/* Strong text */
+strong {
+    font-weight: 500;
+}
+
+/* Request ID box */
+.request-id-box {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: calc(var(--mud-spacing-unit) * 2);
+    border-radius: 4px;
+    border-left: 3px solid var(--mud-palette-primary);
+    margin: calc(var(--mud-spacing-unit) * 2) 0;
+}
+
+/* Development info section */
+.dev-info-section {
+    margin-top: calc(var(--mud-spacing-unit) * 4);
+    padding-top: calc(var(--mud-spacing-unit) * 3);
+    border-top: 1px solid var(--mud-palette-divider);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .mud-typography-h1 {
+        font-size: 2rem;
+    }
+    
+    .mud-typography-h2 {
+        font-size: 1.5rem;
+    }
+    
+    .mud-typography-h3 {
+        font-size: 1.25rem;
+    }
+    
+    .error-container {
+        padding: calc(var(--mud-spacing-unit) * 2);
+    }
+    
+    .mud-paper {
+        padding: calc(var(--mud-spacing-unit) * 2);
+    }
+}
+

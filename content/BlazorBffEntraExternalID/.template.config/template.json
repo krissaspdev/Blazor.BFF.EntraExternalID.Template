@@ -1,0 +1,47 @@
+{
+  "author": "krissaspdev",
+  "classifications": [
+    "AspNetCore",
+    "WASM",
+    "MicrosoftEntraExternalID",
+    "OAuth2",
+    "Web",
+    "Cloud",
+    "Console",
+    "Solution",
+    "Blazor"
+  ],
+  "name": "ASP.NET Core Blazor BFF hosted WASM Microsoft Entra External ID",
+  "identity": "Blazor.BFF.EntraExternalID.Template",
+  "shortName": "blazor-bff-ext",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "BlazorBffEntraExternalID",
+  "preferNameDirectory": "true",
+  "guids": [
+    "8F2A4B7C-91D3-4E6A-B8F5-2C9D7E4A1B3F",
+    "6D9E3A2F-4C8B-4A7D-9E2F-5B8C3D6A9E1F",
+    "2B7F5C9A-3D4E-4B6A-8F1C-9D5E7A2B4C6F"
+  ],
+  "symbols": {
+    "HttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 44300,
+        "high": 44399
+      }
+    },
+    "HttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "HttpsPort",
+        "fallbackVariableName": "HttpsPortGenerated"
+      },
+      "replaces": "44348"
+    }
+  }
+}
